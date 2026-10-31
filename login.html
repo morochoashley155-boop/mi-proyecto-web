@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema - Grupo 4</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #007bff; }
+        .login-card { background: #f8f9fa; padding: 30px; border-radius: 6px; width: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .login-card h2 { font-size: 20px; font-weight: normal; color: #212529; margin-bottom: 25px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 13px; color: #495057; margin-bottom: 8px; }
+        .form-group input { width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px; outline: none; background: #fff; }
+        .form-group input::placeholder { color: #adb5bd; }
+        .login-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
+        .login-footer a { font-size: 12px; color: #6c757d; text-decoration: none; }
+        .login-footer a:hover { text-decoration: underline; }
+        .btn-submit { background-color: #007bff; color: white; border: none; padding: 8px 16px; font-size: 14px; border-radius: 4px; cursor: pointer; }
+        .btn-submit:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Acceso al sistema</h2>
+        
+        <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" id="emailInput" placeholder="correo@ejemplo.com">
+        </div>
+        
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="passInput" placeholder="Ingrese su contraseña">
+        </div>
+        
+        <div class="login-footer">
+            <a href="#">¿Olvidó su contraseña? Solicite ayuda al administrador.</a>
+            <button class="btn-submit" id="submitBtn">Iniciar sesión</button>
+        </div>
+    </div>
+
+    <!-- Conexión a Firebase para validar los accesos creados -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    <script>
+        const firebaseConfig = {
+            authDomain: "://firebaseapp.com",
+            projectId: "mi-proyecto-web-93936",
+            storageBucket: "://appspot.com"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        document.getElementById("submitBtn").addEventListener("click", () => {
+            const email = document.getElementById("emailInput").value;
+            const pass = document.getElementById("passInput").value;
+
+            if(!email || !pass) {
+                alert("Por favor, llene todos los campos.");
+                return;
+            }
+
+            firebase.auth().signInWithEmailAndPassword(email, pass)
+                .then((userCredential) => {
+                    alert("¡Acceso verídico! Has ingresado correctamente al sistema.");
+                    window.location.href = "index.html"; 
+                })
+                .catch((error) => {
+                    alert("Error: Usuario no registrado o clave incorrecta.");
+                });
+        });
+    </script>
+
+</body>
+</html>
