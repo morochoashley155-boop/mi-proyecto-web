@@ -41,19 +41,19 @@
         </div>
     </div>
 
-    <!-- Carga de librerías de Firebase -->
+       <!-- Enlaces oficiales completos a las librerías de Firebase -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
 
     <script>
-        // Configuración de tu proyecto en la nube
+        // Configuración verídica de tu base de datos en la nube
         const firebaseConfig = {
             authDomain: "://firebaseapp.com",
             projectId: "mi-proyecto-web-93936",
             storageBucket: "://appspot.com"
         };
 
-        // Inicializar la conexión con Firebase
+        // Inicializar Firebase
         firebase.initializeApp(firebaseConfig);
 
         // Capturar los datos e iniciar sesión verídicamente
@@ -66,11 +66,10 @@
                 return;
             }
 
-            // Validación directa en la nube de Google
+            // Validación directa en la nube con redirección al Dashboard
             firebase.auth().signInWithEmailAndPassword(email, pass)
                 .then((userCredential) => {
                     alert("¡Acceso verídico concedido! Redireccionando al Dashboard...");
-                    // Salto automático a la pantalla que me enviaste de la ingeniera
                     window.location.href = "dashboard.html"; 
                 })
                 .catch((error) => {
@@ -78,7 +77,5 @@
                 });
         });
     </script>
-
 </body>
 </html>
-
