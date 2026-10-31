@@ -46,7 +46,8 @@
                 <input type="text" class="search-input" placeholder="Buscar...">
                 <button class="search-btn">🔍</button>
             </div>
-            <a href="#" class="nav-right-login">➔ Iniciar sesión</a>
+            <!-- Redirección vinculada a login.html -->
+            <a href="login.html" class="nav-right-login">➔ Iniciar sesión</a>
         </div>
     </div>
 
@@ -55,7 +56,8 @@
         <div class="sidebar">
             <div>
                 <div class="sidebar-section-title">Acceso</div>
-                <a href="#">➔ Iniciar sesión</a>
+                <!-- Redirección vinculada a login.html -->
+                <a href="login.html">➔ Iniciar sesión</a>
             </div>
             <div class="sidebar-footer">Sin sesión iniciada</div>
         </div>
@@ -75,7 +77,10 @@
                 <p>Velarde Jácome Heidy Jamileth</p>
             </div>
             
-            <button class="btn-login" id="loginBtn">➔ Iniciar Sesión</button>
+            <!-- Redirección visual vinculada a login.html en el botón principal -->
+            <a href="login.html" style="text-decoration: none;">
+                <button class="btn-login" id="loginBtn">➔ Iniciar Sesión</button>
+            </a>
             
             <!-- Barra de Pie de Página Fijo -->
             <div class="footer-bar">
@@ -88,42 +93,20 @@
         </div>
     </div>
 
-</body>
-</html>
-    <!-- 1. Enlaces a las herramientas de Firebase -->
+    <!-- Enlaces oficiales completos a las librerías de Firebase -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
 
-    <!-- 2. Lógica de conexión del botón de inicio de sesión -->
     <script>
-        // Configuración de tu base de datos de Firebase
+        // Configuración de tu base de datos en la nube
         const firebaseConfig = {
-            apiKey: "TU_API_KEY",
-            authDomain: "://firebaseapp.com",
+            authDomain: "mi-proyecto-web-93936.firebaseapp.com",
             projectId: "mi-proyecto-web-93936",
-            storageBucket: "://appspot.com",
-            messagingSenderId: "TU_SENDER_ID",
-            appId: "TU_APP_ID"
+            storageBucket: "mi-proyecto-web-93936.appspot.com"
         };
 
         // Inicializar Firebase
         firebase.initializeApp(firebaseConfig);
-
-        // Programar la acción al dar clic en el botón azul
-        document.getElementById("loginBtn").addEventListener("click", () => {
-            const correo = prompt("Ingrese su correo electrónico de integrante:");
-            const clave = prompt("Ingrese su contraseña:");
-
-            if (correo && clave) {
-                firebase.auth().signInWithEmailAndPassword(correo, clave)
-                    .then((userCredential) => {
-                        alert("¡Acceso verídico concedido! Bienvenido al sistema.");
-                        window.location.reload(); // Recarga la página tras ingresar
-                    })
-                    .catch((error) => {
-                        alert("Error de acceso: Credenciales incorrectas o usuario no registrado.");
-                    });
-            }
-        });
     </script>
-
+</body>
+</html>
