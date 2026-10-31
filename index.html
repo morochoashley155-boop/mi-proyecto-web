@@ -3,48 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto - Sistemas de Información Avanzada</title>
+    <title>Mi Proyecto - Grupo 4</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { display: flex; height: 100vh; background-color: #f8f9fa; }
+        body { display: flex; flex-direction: column; height: 100vh; background-color: #f8f9fa; }
+        .top-navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; width: 100%; position: fixed; top: 0; left: 0; z-index: 100; }
+        .top-left { display: flex; align-items: center; gap: 20px; font-weight: bold; color: #212529; }
+        .search-container { display: flex; align-items: center; }
+        .search-input { padding: 6px 12px; border: 1px solid #ced4da; border-radius: 4px 0 0 4px; outline: none; font-size: 14px; width: 200px; }
+        .search-btn { background-color: #007bff; color: white; border: none; padding: 7px 14px; border-radius: 0 4px 4px 0; cursor: pointer; }
+        .nav-right-login { color: #495057; text-decoration: none; font-size: 14px; margin-left: 15px; display: flex; align-items: center; gap: 5px; }
+        .app-body { display: flex; flex: 1; margin-top: 56px; }
         .sidebar { width: 250px; background-color: #212529; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
-        .sidebar h2 { font-size: 18px; margin-bottom: 30px; }
-        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 10px 0; font-size: 14px; }
+        .sidebar-section-title { font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; margin-top: 15px; }
+        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 8px 0; font-size: 14px; }
         .sidebar a:hover { color: white; }
-        .main-content { flex: 1; display: flex; flex-direction: column; }
-        .navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: flex-end; padding: 0 20px; }
-        .container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .logo { color: #28a745; font-size: 48px; margin-bottom: 10px; }
-        .title { font-size: 32px; color: #343a40; margin-bottom: 10px; }
-        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 5px; }
-        .subject { font-size: 16px; color: #495057; margin-bottom: 30px; }
-        .integrantes-box { margin-bottom: 30px; }
-        .integrantes-box h3 { font-size: 18px; margin-bottom: 10px; color: #212529; }
-        .integrantes-box p { font-size: 14px; color: #495057; margin-bottom: 5px; }
-        .btn-login { background-color: #007bff; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .sidebar-footer { font-size: 12px; color: #6c757d; }
+        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; position: relative; }
+        .logo-img { color: #28a745; font-size: 56px; margin-bottom: 15px; }
+        .title { font-size: 36px; color: #212529; font-weight: normal; margin-bottom: 10px; }
+        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 8px; }
+        .subject { font-size: 15px; color: #495057; margin-bottom: 35px; }
+        .integrantes-box { margin-bottom: 35px; }
+        .integrantes-box h3 { font-size: 18px; margin-bottom: 12px; color: #212529; font-weight: bold; }
+        .integrantes-box p { font-size: 15px; color: #495057; margin-bottom: 6px; }
+        .btn-login { background-color: #007bff; color: white; border: none; padding: 12px 28px; font-size: 16px; border-radius: 4px; cursor: pointer; font-weight: normal; display: flex; align-items: center; gap: 8px; margin: 0 auto; }
         .btn-login:hover { background-color: #0056b3; }
+        .footer-bar { width: 100%; position: absolute; bottom: 0; left: 0; padding: 15px 20px; display: flex; justify-content: space-between; font-size: 13px; color: #6c757d; border-top: 1px solid #dee2e6; background: #fff; }
+        .footer-links a { color: #007bff; text-decoration: none; margin-left: 15px; }
+        .footer-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <!-- Barra Lateral Izquierda -->
-    <div class="sidebar">
-        <div>
-            <h2>Mi Proyecto</h2>
-            <span style="font-size: 11px; color: #6c757d; display: block; margin-top: -20px; margin-bottom: 20px;">ACCESO</span>
-            <a href="#">➔ Iniciar sesión</a>
+    <!-- Barra de Navegación Superior -->
+    <div class="top-navbar">
+        <div class="top-left">
+            <span>Mi Proyecto</span>
         </div>
-        <div style="font-size: 12px; color: #6c757d;">Sin sesión iniciada</div>
+        <div style="display: flex; align-items: center;">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <a href="#" class="nav-right-login">➔ Iniciar sesión</a>
+        </div>
     </div>
 
-    <!-- Contenido Principal de la Pantalla -->
-    <div class="main-content">
-        <div class="navbar">
-            <a href="#" style="color: #212529; text-decoration: none; font-size: 14px;">➔ Iniciar sesión</a>
+    <div class="app-body">
+        <!-- Barra Lateral Izquierda -->
+        <div class="sidebar">
+            <div>
+                <div class="sidebar-section-title">Acceso</div>
+                <a href="#">➔ Iniciar sesión</a>
+            </div>
+            <div class="sidebar-footer">Sin sesión iniciada</div>
         </div>
-        
-        <div class="container">
-            <div class="logo">🌱</div>
+
+        <!-- Contenido Central Principal -->
+        <div class="main-content">
+            <div class="logo-img">🌱</div>
             <h1 class="title">Mi Proyecto</h1>
             <p class="subtitle">De aplicación web a sistema de información</p>
             <p class="subject">Sistemas de Información Avanzada — Universidad Agraria del Ecuador</p>
@@ -58,8 +76,54 @@
             </div>
             
             <button class="btn-login" id="loginBtn">➔ Iniciar Sesión</button>
+            
+            <!-- Barra de Pie de Página Fijo -->
+            <div class="footer-bar">
+                <div>Sistemas de Información Avanzada — UAE</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
         </div>
     </div>
 
 </body>
 </html>
+    <!-- 1. Enlaces a las herramientas de Firebase -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+
+    <!-- 2. Lógica de conexión del botón de inicio de sesión -->
+    <script>
+        // Configuración de tu base de datos de Firebase
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "://firebaseapp.com",
+            projectId: "mi-proyecto-web-93936",
+            storageBucket: "://appspot.com",
+            messagingSenderId: "TU_SENDER_ID",
+            appId: "TU_APP_ID"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Programar la acción al dar clic en el botón azul
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const correo = prompt("Ingrese su correo electrónico de integrante:");
+            const clave = prompt("Ingrese su contraseña:");
+
+            if (correo && clave) {
+                firebase.auth().signInWithEmailAndPassword(correo, clave)
+                    .then((userCredential) => {
+                        alert("¡Acceso verídico concedido! Bienvenido al sistema.");
+                        window.location.reload(); // Recarga la página tras ingresar
+                    })
+                    .catch((error) => {
+                        alert("Error de acceso: Credenciales incorrectas o usuario no registrado.");
+                    });
+            }
+        });
+    </script>
+
