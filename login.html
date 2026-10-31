@@ -41,36 +41,44 @@
         </div>
     </div>
 
-    <!-- Conexión a Firebase para validar los accesos creados -->
+    <!-- Carga de librerías de Firebase -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
+
     <script>
+        // Configuración de tu proyecto en la nube
         const firebaseConfig = {
             authDomain: "://firebaseapp.com",
             projectId: "mi-proyecto-web-93936",
             storageBucket: "://appspot.com"
         };
+
+        // Inicializar la conexión con Firebase
         firebase.initializeApp(firebaseConfig);
 
+        // Capturar los datos e iniciar sesión verídicamente
         document.getElementById("submitBtn").addEventListener("click", () => {
             const email = document.getElementById("emailInput").value;
             const pass = document.getElementById("passInput").value;
 
-            if(!email || !pass) {
-                alert("Por favor, llene todos los campos.");
+            if (!email || !pass) {
+                alert("Por favor, llene todos los campos del formulario.");
                 return;
             }
 
+            // Validación directa en la nube de Google
             firebase.auth().signInWithEmailAndPassword(email, pass)
                 .then((userCredential) => {
-                    alert("¡Acceso verídico! Has ingresado correctamente al sistema.");
-                    window.location.href = "index.html"; 
+                    alert("¡Acceso verídico concedido! Redireccionando al Dashboard...");
+                    // Salto automático a la pantalla que me enviaste de la ingeniera
+                    window.location.href = "dashboard.html"; 
                 })
                 .catch((error) => {
-                    alert("Error: Usuario no registrado o clave incorrecta.");
+                    alert("Error: El usuario no existe o la contraseña es incorrecta en Firebase.");
                 });
         });
     </script>
 
 </body>
 </html>
+
