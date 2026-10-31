@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto - Sistemas de Información Avanzada</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; height: 100vh; background-color: #f8f9fa; }
+        .sidebar { width: 250px; background-color: #212529; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+        .sidebar h2 { font-size: 18px; margin-bottom: 30px; }
+        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 10px 0; font-size: 14px; }
+        .sidebar a:hover { color: white; }
+        .main-content { flex: 1; display: flex; flex-direction: column; }
+        .navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: flex-end; padding: 0 20px; }
+        .container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .logo { color: #28a745; font-size: 48px; margin-bottom: 10px; }
+        .title { font-size: 32px; color: #343a40; margin-bottom: 10px; }
+        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 5px; }
+        .subject { font-size: 16px; color: #495057; margin-bottom: 30px; }
+        .integrantes-box { margin-bottom: 30px; }
+        .integrantes-box h3 { font-size: 18px; margin-bottom: 10px; color: #212529; }
+        .integrantes-box p { font-size: 14px; color: #495057; margin-bottom: 5px; }
+        .btn-login { background-color: #007bff; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-login:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Lateral Izquierda -->
+    <div class="sidebar">
+        <div>
+            <h2>Mi Proyecto</h2>
+            <span style="font-size: 11px; color: #6c757d; display: block; margin-top: -20px; margin-bottom: 20px;">ACCESO</span>
+            <a href="#">➔ Iniciar sesión</a>
+        </div>
+        <div style="font-size: 12px; color: #6c757d;">Sin sesión iniciada</div>
+    </div>
+
+    <!-- Contenido Principal de la Pantalla -->
+    <div class="main-content">
+        <div class="navbar">
+            <a href="#" style="color: #212529; text-decoration: none; font-size: 14px;">➔ Iniciar sesión</a>
+        </div>
+        
+        <div class="container">
+            <div class="logo">🌱</div>
+            <h1 class="title">Mi Proyecto</h1>
+            <p class="subtitle">De aplicación web a sistema de información</p>
+            <p class="subject">Sistemas de Información Avanzada — Universidad Agraria del Ecuador</p>
+            
+            <div class="integrantes-box">
+                <h3>Integrantes:</h3>
+                <p>Asunción Morocho Ashley Danna</p>
+                <p>Asunción Morocho Ashley Priscila</p>
+                <p>Reyna Flores Geancarlos Alexander</p>
+                <p>Velarde Jácome Heidy Jamileth</p>
+            </div>
+            
+            <button class="btn-login" id="loginBtn">➔ Iniciar Sesión</button>
+        </div>
+    </div>
+
+</body>
+</html>
