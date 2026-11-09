@@ -1,113 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto - Grupo 4</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { display: flex; flex-direction: column; height: 100vh; background-color: #f8f9fa; }
-        .top-navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; width: 100%; position: fixed; top: 0; left: 0; z-index: 100; }
-        .top-left { display: flex; align-items: center; gap: 20px; font-weight: bold; color: #212529; }
-        .search-container { display: flex; align-items: center; }
-        .search-input { padding: 6px 12px; border: 1px solid #ced4da; border-radius: 4px 0 0 4px; outline: none; font-size: 14px; width: 200px; }
-        .search-btn { background-color: #007bff; color: white; border: none; padding: 7px 14px; border-radius: 0 4px 4px 0; cursor: pointer; }
-        .nav-right-login { color: #495057; text-decoration: none; font-size: 14px; margin-left: 15px; display: flex; align-items: center; gap: 5px; }
-        .app-body { display: flex; flex: 1; margin-top: 56px; }
-        .sidebar { width: 250px; background-color: #212529; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
-        .sidebar-section-title { font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; margin-top: 15px; }
-        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 8px 0; font-size: 14px; }
-        .sidebar a:hover { color: white; }
-        .sidebar-footer { font-size: 12px; color: #6c757d; }
-        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; position: relative; }
-        .logo-img { color: #28a745; font-size: 56px; margin-bottom: 15px; }
-        .title { font-size: 36px; color: #212529; font-weight: normal; margin-bottom: 10px; }
-        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 8px; }
-        .subject { font-size: 15px; color: #495057; margin-bottom: 35px; }
-        .integrantes-box { margin-bottom: 35px; }
-        .integrantes-box h3 { font-size: 18px; margin-bottom: 12px; color: #212529; font-weight: bold; }
-        .integrantes-box p { font-size: 15px; color: #495057; margin-bottom: 6px; }
-        .btn-login { background-color: #007bff; color: white; border: none; padding: 12px 28px; font-size: 16px; border-radius: 4px; cursor: pointer; font-weight: normal; display: flex; align-items: center; gap: 8px; margin: 0 auto; }
-        .btn-login:hover { background-color: #0056b3; }
-        .footer-bar { width: 100%; position: absolute; bottom: 0; left: 0; padding: 15px 20px; display: flex; justify-content: space-between; font-size: 13px; color: #6c757d; border-top: 1px solid #dee2e6; background: #fff; }
-        .footer-links a { color: #007bff; text-decoration: none; margin-left: 15px; }
-        .footer-links a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-
-    <!-- Barra de Navegación Superior -->
-    <div class="top-navbar">
-        <div class="top-left">
-            <span>Mi Proyecto</span>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Buscar...">
-                <button class="search-btn">🔍</button>
-            </div>
-            <!-- Redirección vinculada a login.html -->
-            <a href="login.html" class="nav-right-login">➔ Iniciar sesión</a>
-        </div>
-    </div>
-
-    <div class="app-body">
-        <!-- Barra Lateral Izquierda -->
-        <div class="sidebar">
-            <div>
-                <div class="sidebar-section-title">Acceso</div>
-                <!-- Redirección vinculada a login.html -->
-                <a href="login.html">➔ Iniciar sesión</a>
-            </div>
-            <div class="sidebar-footer">Sin sesión iniciada</div>
-        </div>
-
-        <!-- Contenido Central Principal -->
-        <div class="main-content">
-            <div class="logo-img">🌱</div>
-            <h1 class="title">Mi Proyecto</h1>
-            <p class="subtitle">De aplicación web a sistema de información</p>
-            <p class="subject">Sistemas de Información Avanzada — Universidad Agraria del Ecuador</p>
-            
-            <div class="integrantes-box">
-                <h3>Integrantes:</h3>
-                <p>Asunción Morocho Ashley Danna</p>
-                <p>Asunción Morocho Ashley Priscila</p>
-                <p>Reyna Flores Geancarlos Alexander</p>
-                <p>Velarde Jácome Heidy Jamileth</p>
-            </div>
-            
-            <!-- Redirección visual vinculada a login.html en el botón principal -->
-           <a href="login.html" style="text-decoration: none;">
-           <button class="btn-login" id="loginBtn">➔ Iniciar Sesión</button>
+<!-- Barra Lateral Izquierda (Sidebar) -->
+<aside style="background-color: #212529; color: #fff; width: 250px; height: 100vh; padding: 20px 10px; display: flex; flex-direction: column; justify-content: space-between; font-family: sans-serif;">
+    
+    <div>
+        <!-- Título del Proyecto -->
+        <h1 style="font-size: 18px; font-weight: bold; margin-bottom: 30px; padding-left: 10px;">Mi Proyecto</h1>
+        
+        <!-- Sección CORE -->
+        <div style="margin-bottom: 25px;">
+            <p style="font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; padding-left: 10px;">Core</p>
+            <a href="dashboard.html" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px; border-radius: 4px;">
+                <span style="margin-right: 10px;">⚙️</span> Dashboard
             </a>
+        </div>
+        
+        <!-- Sección GESTIÓN -->
+        <div>
+            <p style="font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; padding-left: 10px;">Gestión</p>
             
-            <!-- Barra de Pie de Página Fijo -->
-            <div class="footer-bar">
-                <div>Sistemas de Información Avanzada — UAE</div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
+            <!-- Menú Desplegable Registros -->
+            <div style="margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; color: #adb5bd; padding: 10px; font-size: 14px; cursor: pointer;">
+                    <span>🗂️ Registros</span>
+                    <span style="font-size: 10px;">❯</span>
+                </div>
+                <!-- Submenús de Registros -->
+                <div style="padding-left: 25px;">
+                    <a href="clientes.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Clientes</a>
+                    <a href="categorias.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Categorías</a>
+                    <a href="productos.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Productos</a>
                 </div>
             </div>
+            
+            <a href="proveedores.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
+                <span style="margin-right: 10px;">🚚</span> Proveedores
+            </a>
+            
+            <a href="compras.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
+                <span style="margin-right: 10px;">🛒</span> Compras
+            </a>
+            
+            <a href="ventas.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
+                <span style="margin-right: 10px;">🎰</span> Ventas
+            </a>
         </div>
     </div>
 
-    <!-- Enlaces oficiales completos a las librerías de Firebase -->
-    <script src="https://gstatic.com"></script>
-    <script src="https://gstatic.com"></script>
+    <!-- Información de Sesión en la parte inferior -->
+    <div style="background-color: #2c3034; padding: 12px; border-radius: 4px; font-size: 12px; color: #adb5bd;">
+        <p style="margin-bottom: 2px;">Sesión iniciada como:</p>
+        <strong style="color: #fff;">Administrador Demo (admin)</strong>
+    </div>
 
+</aside>
 
-    <script>
-        // Configuración de tu base de datos en la nube
-        const firebaseConfig = {
-            authDomain: "mi-proyecto-web-93936.firebaseapp.com",
-            projectId: "mi-proyecto-web-93936",
-            storageBucket: "mi-proyecto-web-93936.appspot.com"
-        };
-
-        // Inicializar Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-</body>
-</html>
