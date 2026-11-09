@@ -1,94 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto - Dashboard Grupo 4</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { display: flex; flex-direction: column; height: 100vh; background-color: #f8f9fa; }
-        .top-navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; width: 100%; position: fixed; top: 0; left: 0; z-index: 100; }
-        .top-left { display: flex; align-items: center; gap: 20px; font-weight: bold; color: #212529; }
-        .search-container { display: flex; align-items: center; }
-        .search-input { padding: 6px 12px; border: 1px solid #ced4da; border-radius: 4px 0 0 4px; outline: none; font-size: 14px; width: 200px; }
-        .search-btn { background-color: #007bff; color: white; border: none; padding: 7px 14px; border-radius: 0 4px 4px 0; cursor: pointer; }
-        .nav-right-user { color: #495057; font-size: 14px; margin-left: 15px; display: flex; align-items: center; gap: 5px; }
-        .app-body { display: flex; flex: 1; margin-top: 56px; }
-        .sidebar { width: 250px; background-color: #212529; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
-        .sidebar-section-title { font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; margin-top: 15px; }
-        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 8px 0; font-size: 14px; }
-        .sidebar a:hover { color: white; }
-        .sidebar-footer { font-size: 12px; color: #6c757d; line-height: 1.4; }
-        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; position: relative; }
-        .logo-img { color: #28a745; font-size: 56px; margin-bottom: 15px; }
-        .title { font-size: 36px; color: #212529; font-weight: normal; margin-bottom: 10px; }
-        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 8px; }
-        .subject { font-size: 15px; color: #495057; margin-bottom: 20px; }
-        .session-badge { color: #28a745; font-size: 15px; font-weight: normal; margin-bottom: 35px; display: flex; align-items: center; gap: 6px; justify-content: center; }
-        .footer-bar { width: 100%; position: absolute; bottom: 0; left: 0; padding: 15px 20px; display: flex; justify-content: space-between; font-size: 13px; color: #6c757d; border-top: 1px solid #dee2e6; background: #fff; }
-        .footer-links a { color: #007bff; text-decoration: none; margin-left: 15px; }
-        .footer-links a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-
-    <!-- Barra Superior -->
-    <div class="top-navbar">
-        <div class="top-left">
-            <span>Mi Proyecto</span>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Buscar...">
-                <button class="search-btn">🔍</button>
-            </div>
-            <span class="nav-right-user">👤 Administrador Demo</span>
-        </div>
+   <!-- BARRA LATERAL IZQUIERDA (PANELES DEL MENÚ EN NEGRO) -->
+<div class="sidebar" style="background-color: #1a1a24; color: #ffffff; width: 250px; height: 100vh; padding: 20px; font-family: sans-serif;">
+    
+    <!-- SECCIÓN CORE -->
+    <div class="menu-section" style="margin-bottom: 25px;">
+        <p style="color: #6c757d; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">Core</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;">
+                <a href="dashboard.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">📊</span> Dashboard
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <div class="app-body">
-        <!-- Barra Lateral Izquierda Identica a la Clase -->
-        <div class="sidebar">
-            <div>
-                <div class="sidebar-section-title">Core</div>
-                <a href="#">👁️ Dashboard</a>
-                
-                <div class="sidebar-section-title">Gestión</div>
-                <a href="#">📁 Registros</a>
-                <a href="#" style="padding-left: 15px;">• Clientes</a>
-                <a href="#" style="padding-left: 15px;">• Categorías</a>
-                <a href="#" style="padding-left: 15px;">• Productos</a>
-                <a href="#" style="padding-left: 15px;">• Proveedores</a>
-                <a href="#">🛒 Compras</a>
-            </div>
-            <div class="sidebar-footer">
-                Sesión iniciada como:<br>
-                <strong>Administrador Demo (admin)</strong>
-            </div>
-        </div>
-
-        <!-- Contenido Central Principal -->
-        <div class="main-content">
-            <div class="logo-img">🌱</div>
-            <h1 class="title">Mi Proyecto</h1>
-            <p class="subtitle">De aplicación web a sistema de información</p>
-            <p class="subject">Sistemas de Información Avanzada — Universidad Agraria del Ecuador</p>
-            
-            <!-- Texto Verde de Validación Activa -->
-            <div class="session-badge">
-                🟢 Sesión activa como Administrador Demo (admin)
-            </div>
-            
-            <!-- Barra de Pie de Página Fijo -->
-            <div class="footer-bar">
-                <div>Sistemas de Información Avanzada — UAE</div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
-            </div>
-        </div>
+    <!-- SECCIÓN GESTIÓN -->
+    <div class="menu-section" style="margin-bottom: 25px;">
+        <p style="color: #6c757d; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">Gestión</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 12px;">
+                <a href="registros.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="display: flex; align-items: center;"><span style="margin-right: 10px;">🗂️</span> Registros</span>
+                    <span style="font-size: 10px;">❯</span>
+                </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <a href="clientes.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">👤</span> Clientes
+                </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <a href="categorias.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">🏷️</span> Categorías
+                </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <a href="productos.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">📦</span> Productos
+                </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <a href="proveedores.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">🚛</span> Proveedores
+                </a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <a href="compras.php" style="color: #a0a5b5; text-decoration: none; font-size: 14px; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">🛒</span> Compras
+                </a>
+            </li>
+            <li style="margin-bottom: 12px; background-color: #262936; padding: 8px; border-radius: 4px;">
+                <a href="ventas.php" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; font-weight: bold;">
+                    <span style="margin-right: 10px;">📠</span> Ventas
+                </a>
+            </li>
+        </ul>
     </div>
 
-</body>
-</html>
+    <!-- SECCIÓN USUARIO ACTIVO (PIE DEL MENÚ NEGRO) -->
+    <div class="user-section" style="margin-top: auto; border-top: 1px solid #2d2d3f; padding-top: 15px; font-size: 12px; color: #6c757d;">
+        <p style="margin: 0; font-size: 11px;">Sesión iniciada como:</p>
+        <p style="margin: 3px 0 0 0; color: #ffffff; font-weight: bold;">Administrador Demo (admin)</p>
+    </div>
+
+</div>
