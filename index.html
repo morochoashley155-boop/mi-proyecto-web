@@ -1,55 +1,75 @@
-<!-- Barra Lateral Izquierda (Sidebar) -->
-<aside style="background-color: #212529; color: #fff; width: 250px; height: 100vh; padding: 20px 10px; display: flex; flex-direction: column; justify-content: space-between; font-family: sans-serif;">
-    
-    <div>
-        <!-- Título del Proyecto -->
-        <h1 style="font-size: 18px; font-weight: bold; margin-bottom: 30px; padding-left: 10px;">Mi Proyecto</h1>
-        
-        <!-- Sección CORE -->
-        <div style="margin-bottom: 25px;">
-            <p style="font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; padding-left: 10px;">Core</p>
-            <a href="dashboard.html" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px; border-radius: 4px;">
-                <span style="margin-right: 10px;">⚙️</span> Dashboard
-            </a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto - Dashboard Grupo 4</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; flex-direction: column; height: 100vh; background-color: #f8f9fa; }
+        .top-navbar { height: 56px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; width: 100%; position: fixed; top: 0; left: 0; z-index: 100; }
+        .top-left { display: flex; align-items: center; gap: 20px; font-weight: bold; color: #212529; }
+        .search-container { display: flex; align-items: center; }
+        .search-input { padding: 6px 12px; border: 1px solid #ced4da; border-radius: 4px 0 0 4px; outline: none; font-size: 14px; width: 200px; }
+        .search-btn { background-color: #007bff; color: white; border: none; padding: 7px 14px; border-radius: 0 4px 4px 0; cursor: pointer; }
+        .nav-right-user { color: #495057; font-size: 14px; margin-left: 15px; display: flex; align-items: center; gap: 5px; }
+        .app-body { display: flex; flex: 1; margin-top: 56px; }
+        .sidebar { width: 250px; background-color: #212529; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+        .sidebar-section-title { font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; margin-top: 15px; }
+        .sidebar a { color: #adb5bd; text-decoration: none; display: block; padding: 8px 0; font-size: 14px; }
+        .sidebar a:hover { color: white; }
+        .sidebar-footer { font-size: 12px; color: #6c757d; line-height: 1.4; }
+        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; position: relative; }
+        .logo-img { color: #28a745; font-size: 56px; margin-bottom: 15px; }
+        .title { font-size: 36px; color: #212529; font-weight: normal; margin-bottom: 10px; }
+        .subtitle { font-size: 18px; color: #6c757d; margin-bottom: 8px; }
+        .subject { font-size: 15px; color: #495057; margin-bottom: 20px; }
+        .session-badge { color: #28a745; font-size: 15px; font-weight: normal; margin-bottom: 35px; display: flex; align-items: center; gap: 6px; justify-content: center; }
+        .footer-bar { width: 100%; position: absolute; bottom: 0; left: 0; padding: 15px 20px; display: flex; justify-content: space-between; font-size: 13px; color: #6c757d; border-top: 1px solid #dee2e6; background: #fff; }
+        .footer-links a { color: #007bff; text-decoration: none; margin-left: 15px; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-navbar">
+        <div class="top-left">
+            <span>Mi Proyecto</span>
         </div>
-        
-        <!-- Sección GESTIÓN -->
-        <div>
-            <p style="font-size: 11px; color: #6c757d; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; padding-left: 10px;">Gestión</p>
-            
-            <!-- Menú Desplegable Registros -->
-            <div style="margin-bottom: 5px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; color: #adb5bd; padding: 10px; font-size: 14px; cursor: pointer;">
-                    <span>🗂️ Registros</span>
-                    <span style="font-size: 10px;">❯</span>
-                </div>
-                <!-- Submenús de Registros -->
-                <div style="padding-left: 25px;">
-                    <a href="clientes.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Clientes</a>
-                    <a href="categorias.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Categorías</a>
-                    <a href="productos.php" style="display: block; color: #adb5bd; text-decoration: none; padding: 8px 10px; font-size: 14px;">Productos</a>
-                </div>
+        <div style="display: flex; align-items: center;">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-btn">🔍</button>
             </div>
-            
-            <a href="proveedores.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
-                <span style="margin-right: 10px;">🚚</span> Proveedores
-            </a>
-            
-            <a href="compras.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
-                <span style="margin-right: 10px;">🛒</span> Compras
-            </a>
-            
-            <a href="ventas.php" style="display: flex; align-items: center; color: #adb5bd; text-decoration: none; padding: 10px; font-size: 14px;">
-                <span style="margin-right: 10px;">🎰</span> Ventas
-            </a>
+            <span class="nav-right-user">👤 Administrador Demo</span>
         </div>
     </div>
 
-    <!-- Información de Sesión en la parte inferior -->
-    <div style="background-color: #2c3034; padding: 12px; border-radius: 4px; font-size: 12px; color: #adb5bd;">
-        <p style="margin-bottom: 2px;">Sesión iniciada como:</p>
-        <strong style="color: #fff;">Administrador Demo (admin)</strong>
+    <div class="app-body">
+        <!-- Barra Lateral Izquierda Identica a la Clase -->
+        <div class="sidebar">
+            <div>
+                <div class="sidebar-section-title">Core</div>
+                <a href="#">👁️ Dashboard</a>
+                
+                <div class="sidebar-section-title">Gestión</div>
+                <a href="#">📁 Registros</a>
+                <a href="#" style="padding-left: 15px;">• Clientes</a>
+                <a href="#" style="padding-left: 15px;">• Categorías</a>
+                <a href="#" style="padding-left: 15px;">• Productos</a>
+                <a href="#" style="padding-left: 15px;">• Proveedores</a>
+                <a href="#">🛒 Compras</a>
+                <!-- Enlace de Ventas agregado exactamente con tu estilo -->
+                <a href="#">📊 Ventas</a>
+            </div>
+            <div class="sidebar-footer">
+                Sesión iniciada como:<br>
+                <strong>Administrador Demo (admin)</strong>
+            </div>
+        </div>
     </div>
 
-</aside>
+</body>
+</html>
 
