@@ -7,22 +7,39 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #007bff; }
-        .login-card { background: #f8f9fa; padding: 30px; border-radius: 6px; width: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .login-card h2 { font-size: 20px; font-weight: normal; color: #212529; margin-bottom: 25px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
-        .form-group { margin-bottom: 18px; }
+        .login-card { background: #f8f9fa; padding: 30px; border-radius: 6px; width: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align: center; }
+        
+        /* Estilos del logotipo superior */
+        .logo-container { margin-bottom: 15px; }
+        .logo-container svg { width: 50px; height: 50px; }
+        
+        .login-card h2 { font-size: 20px; font-weight: normal; color: #212529; margin-bottom: 25px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; text-align: left; }
+        .form-group { margin-bottom: 18px; text-align: left; }
         .form-group label { display: block; font-size: 13px; color: #495057; margin-bottom: 8px; }
         .form-group input { width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px; outline: none; background: #fff; }
         .form-group input::placeholder { color: #adb5bd; }
-        .login-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
-        .login-footer a { font-size: 12px; color: #6c757d; text-decoration: none; }
+        .login-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; border-bottom: 1px solid #dee2e6; padding-bottom: 20px; }
+        .login-footer a { font-size: 12px; color: #6c757d; text-decoration: none; text-align: left; max-width: 65%; }
         .login-footer a:hover { text-decoration: underline; }
         .btn-submit { background-color: #007bff; color: white; border: none; padding: 8px 16px; font-size: 14px; border-radius: 4px; cursor: pointer; }
         .btn-submit:hover { background-color: #0056b3; }
+        
+        /* Sección de Integrantes solicitada en Color Negro */
+        .integrantes-section { margin-top: 20px; text-align: center; }
+        .integrantes-section h3 { font-size: 14px; color: #000000; margin-bottom: 8px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .integrantes-list { color: #000000; font-weight: bold; font-size: 13px; line-height: 1.6; }
     </style>
 </head>
 <body>
 
     <div class="login-card">
+        <!-- Logotipo de la Plantita Integrado -->
+        <div class="logo-container">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                <path d="M12 3V21M12 9C14.5 7 19 7 20 9C20 12 16.5 13 12 14M12 11C9.5 9 5 9 4 11C4 14 7.5 15 12 16" stroke="#28a745" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+
         <h2>Acceso al sistema</h2>
         
         <div class="form-group">
@@ -39,18 +56,29 @@
             <a href="#">¿Olvidó su contraseña? Solicite ayuda al administrador.</a>
             <button class="btn-submit" id="submitBtn">Iniciar sesión</button>
         </div>
+
+        <!-- Bloque Fijo de Integrantes en Color Negro -->
+        <div class="integrantes-section">
+            <h3>Integrantes:</h3>
+            <div class="integrantes-list">
+                <p>Asunción Morocho Ashley Danna</p>
+                <p>Asunción Morocho Ashley Priscila</p>
+                <p>Reyna Flores Geancarlos Alexander</p>
+                <p>Velarde Jácome Heidy Jamileth</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Enlaces oficiales completos a las librerías de Firebase -->
+    <!-- CDN Oficiales Corregidos de Firebase (Versión v8 para compatibilidad con tu código antiguo) -->
     <script src="https://gstatic.com"></script>
     <script src="https://gstatic.com"></script>
 
     <script>
         // Configuración verídica de tu base de datos en la nube
         const firebaseConfig = {
-            authDomain: "://firebaseapp.com",
+            authDomain: "mi-proyecto-web-93936.firebaseapp.com",
             projectId: "mi-proyecto-web-93936",
-            storageBucket: "://appspot.com"
+            storageBucket: "mi-proyecto-web-93936.appspot.com"
         };
 
         // Inicializar Firebase
@@ -79,3 +107,4 @@
     </script>
 </body>
 </html>
+
